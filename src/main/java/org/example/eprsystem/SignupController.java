@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.eprsystem.service.DatabaseService;
@@ -18,8 +19,8 @@ import java.util.Objects;
 public class SignupController {
     @FXML TextField nameField;
     @FXML TextField cnpjField;
-    @FXML TextField passwordField;
-    @FXML TextField confirmPasswordField;
+    @FXML PasswordField passwordField;
+    @FXML PasswordField confirmPasswordField;
 
     public void completeSignup(ActionEvent event) {
         createUser();
@@ -41,6 +42,10 @@ public class SignupController {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
+        if(name.isEmpty() || cnpj.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            showErrorModal();
+        }
+
         if(password.equals(confirmPassword)) {
             DatabaseService service = new UserDatabaseManager();
             service.create(name, cnpj, password);
@@ -48,5 +53,10 @@ public class SignupController {
         else {
             System.out.println("Passwords dont match");
         }
+    }
+
+    public void showErrorModal() {
+        var view = new SignupErrorView();
+        view.start();
     }
 }

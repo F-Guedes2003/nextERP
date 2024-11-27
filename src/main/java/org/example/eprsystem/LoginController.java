@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.eprsystem.exceptions.NonExistentUserException;
@@ -19,7 +20,7 @@ import java.util.Optional;
 
 public class LoginController {
     @FXML TextField cnpjField;
-    @FXML TextField passwordField;
+    @FXML PasswordField passwordField;
 
     public void handleLogin() {
         var cnpj = cnpjField.getText();
