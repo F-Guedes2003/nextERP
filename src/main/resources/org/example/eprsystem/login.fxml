@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="242.0" prefWidth="378.0" style="-fx-background-color: #FFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eprsystem.LoginController">
    <children>
-      <TextField layoutX="107.0" layoutY="90.0" promptText="CNPJ:" style="-fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" />
-      <TextField layoutX="107.0" layoutY="134.0" promptText="Password:" style="-fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" />
-      <Button layoutX="108.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #ffff; -fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" text="Log In" />
+      <TextField fx:id="cnpjField" layoutX="107.0" layoutY="90.0" promptText="CNPJ:" style="-fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" />
+      <TextField fx:id="passwordField" layoutX="107.0" layoutY="134.0" promptText="Password:" style="-fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" />
+      <Button layoutX="108.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #ffff; -fx-border-color: rgb(186, 228, 179); -fx-border-radius: 5;" text="Log In" />
       <Hyperlink layoutX="137.0" layoutY="207.0" onAction="#changeToSignup" text="Forgot password">
          <font>
             <Font size="12.0" />
